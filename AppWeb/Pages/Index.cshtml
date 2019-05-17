@@ -1,0 +1,20 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "";
+}
+<div class="row">
+    <table>
+        @foreach (var i in Model.HistClinicas)
+        {
+
+            <tr>
+                <td>
+                    <a class="text-primary">@i.Id</a>
+                    <a class="text-primary">@i.PacienteId</a>
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+

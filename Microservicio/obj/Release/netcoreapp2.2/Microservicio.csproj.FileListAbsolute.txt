@@ -1,0 +1,17 @@
+C:\Users\carli\source\repos\CS\Microservicio\bin\Release\netcoreapp2.2\Microservicio.deps.json
+C:\Users\carli\source\repos\CS\Microservicio\bin\Release\netcoreapp2.2\Microservicio.runtimeconfig.json
+C:\Users\carli\source\repos\CS\Microservicio\bin\Release\netcoreapp2.2\Microservicio.runtimeconfig.dev.json
+C:\Users\carli\source\repos\CS\Microservicio\bin\Release\netcoreapp2.2\Microservicio.dll
+C:\Users\carli\source\repos\CS\Microservicio\bin\Release\netcoreapp2.2\Microservicio.pdb
+C:\Users\carli\source\repos\CS\Microservicio\bin\Release\netcoreapp2.2\ORT.dll
+C:\Users\carli\source\repos\CS\Microservicio\bin\Release\netcoreapp2.2\ORT.pdb
+C:\Users\carli\source\repos\CS\Microservicio\obj\Release\netcoreapp2.2\Microservicio.csprojAssemblyReference.cache
+C:\Users\carli\source\repos\CS\Microservicio\obj\Release\netcoreapp2.2\Microservicio.csproj.CoreCompileInputs.cache
+C:\Users\carli\source\repos\CS\Microservicio\obj\Release\netcoreapp2.2\Microservicio.RazorAssemblyInfo.cache
+C:\Users\carli\source\repos\CS\Microservicio\obj\Release\netcoreapp2.2\Microservicio.RazorAssemblyInfo.cs
+C:\Users\carli\source\repos\CS\Microservicio\obj\Release\netcoreapp2.2\Microservicio.AssemblyInfoInputs.cache
+C:\Users\carli\source\repos\CS\Microservicio\obj\Release\netcoreapp2.2\Microservicio.AssemblyInfo.cs
+C:\Users\carli\source\repos\CS\Microservicio\obj\Release\netcoreapp2.2\Microservicio.RazorTargetAssemblyInfo.cache
+C:\Users\carli\source\repos\CS\Microservicio\obj\Release\netcoreapp2.2\Microservicio.csproj.CopyComplete
+C:\Users\carli\source\repos\CS\Microservicio\obj\Release\netcoreapp2.2\Microservicio.dll
+C:\Users\carli\source\repos\CS\Microservicio\obj\Release\netcoreapp2.2\Microservicio.pdb
