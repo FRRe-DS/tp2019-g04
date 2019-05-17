@@ -35,13 +35,15 @@ namespace ORT
         public Visita BuscarVisitaPorId (int id)
         {
             var Visita = _context.Visitas
+                .Include(x=> x.Receta)
                 .SingleOrDefault(x => x.Id == id);
             return Visita;
         }
 
         public List<Visita> BuscarVisitaPorFecha(List<Visita> VisitasHC, DateTime FechaDesde, DateTime FechaHasta)
         {
-            var RangoDeVisitas = VisitasHC.Where(x => x.Fecha >= FechaDesde)
+            var RangoDeVisitas = VisitasHC
+                .Where(x => x.Fecha >= FechaDesde)
                 .Where(x => x.Fecha <= FechaHasta).ToList();
             return RangoDeVisitas;
         }
@@ -49,6 +51,7 @@ namespace ORT
         public List<Visita> BuscarVisitaPorMedicoId(int idMedico)
         {
             var VisitasMedico = _context.Visitas
+                .Include(x=>x.Receta)
                 .Where(x => x.MedicoId == idMedico).ToList();
             return VisitasMedico;
         }

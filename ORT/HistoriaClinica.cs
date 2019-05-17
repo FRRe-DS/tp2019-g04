@@ -27,6 +27,7 @@ namespace ORT
         {
             var historiasClinicas = _context.HistoriasClinicas
                                     .Include(x=>x.AlergiasyEnfermedades)
+                                    .Include(x=> x.Visitas)
                                      .ToList();
             return historiasClinicas;
         }
@@ -34,13 +35,17 @@ namespace ORT
         public List<HistoriaClinica> GetHistoriasClinicasPorPaciente(int PacId)
         {
             var historiaClinica = _context.HistoriasClinicas
-                                  .Where(x => x.PacienteId == PacId).ToList();
+                .Include(x => x.AlergiasyEnfermedades)
+                                    .Include(x => x.Visitas)
+                .Where(x => x.PacienteId == PacId).ToList();
             return historiaClinica;
         }
 
         public HistoriaClinica GetHistoriasClinicasPorId(int Id)
         {
             var historiaClinica = _context.HistoriasClinicas
+                .Include(x => x.AlergiasyEnfermedades)
+                                    .Include(x => x.Visitas)
                                   .SingleOrDefault(x => x.Id == Id);
             return historiaClinica;
         }

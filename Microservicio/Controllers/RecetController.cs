@@ -21,9 +21,9 @@ namespace Microservicio.Controllers
         }
         // GET: api/Recet
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<Receta> Get()
         {
-            return new string[] { "value1", "value2" };
+            return null;
         }
 
         // GET: api/Recet/5

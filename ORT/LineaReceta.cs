@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,7 @@ namespace ORT
         public LineaReceta BuscarLRporId(int id)
         {
             var LR = _context.LineasRecetas
+                .Include(x=>x.Receta)
                 .SingleOrDefault(x => x.Id == id);
             return LR;
         }
