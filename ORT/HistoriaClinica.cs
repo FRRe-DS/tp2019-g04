@@ -23,18 +23,25 @@ namespace ORT
         {
             _context = context;
         }
-        public List<HistoriaClinica> GetHistoriasClicinas()
+        public List<HistoriaClinica> GetHistoriasClinicas()
         {
             var historiasClinicas = _context.HistoriasClinicas
-                .Include(x=>x.AlergiasyEnfermedades)
+                                    .Include(x=>x.AlergiasyEnfermedades)
                                      .ToList();
             return historiasClinicas;
         }
 
-        public HistoriaClinica GetHistoriasClicinasPorPaciente(int PacId)
+        public List<HistoriaClinica> GetHistoriasClinicasPorPaciente(int PacId)
         {
             var historiaClinica = _context.HistoriasClinicas
-                                  .SingleOrDefault(x => x.PacienteId == PacId);
+                                  .Where(x => x.PacienteId == PacId).ToList();
+            return historiaClinica;
+        }
+
+        public HistoriaClinica GetHistoriasClinicasPorId(int Id)
+        {
+            var historiaClinica = _context.HistoriasClinicas
+                                  .SingleOrDefault(x => x.Id == Id);
             return historiaClinica;
         }
 
@@ -53,8 +60,10 @@ namespace ORT
 
         public void BorrarHistoriaClinica(HistoriaClinica HC)
         {
-            _context.HistoriasClinicas.Remove(HC);
-            _context.SaveChanges();
+            
+                _context.HistoriasClinicas.Remove(HC);
+                _context.SaveChanges();
+            
         }
     }
 }

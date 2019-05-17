@@ -33,7 +33,7 @@
           "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": "1.0.2105168",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.2.0",
           "Newtonsoft.Json": "12.0.2",
-          "ORT": "1.0.0.0"
+          "ORT": "1.0.0"
         },
         "runtime": {
           "Microservicio.dll": {}
@@ -492,12 +492,14 @@
           "System.Runtime": "4.3.0"
         }
       },
-      "ORT/1.0.0.0": {
+      "ORT/1.0.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "2.2.4",
+          "Microsoft.EntityFrameworkCore.SqlServer": "2.2.4",
+          "Newtonsoft.Json": "12.0.2"
+        },
         "runtime": {
-          "ORT.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "ORT.dll": {}
         },
         "compile": {
           "ORT.dll": {}
@@ -3813,8 +3815,8 @@
       "path": "system.linq.queryable/4.0.1",
       "hashPath": "system.linq.queryable.4.0.1.nupkg.sha512"
     },
-    "ORT/1.0.0.0": {
-      "type": "reference",
+    "ORT/1.0.0": {
+      "type": "project",
       "serviceable": false,
       "sha512": ""
     },

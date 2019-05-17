@@ -23,15 +23,14 @@ namespace Microservicio.Controllers
 
         // GET: api/Receta
         [HttpGet]
-        public ActionResult<List<Receta>> Get()
-        {
-            
+        public List<Receta> Get()
+        {            
             return null;
         }
 
         // GET: api/Receta/5
         [HttpGet("{id}")]
-        public ActionResult<Receta> Get(int id)
+        public Receta Get(int id)
         {
             Receta R = new Receta(_context);
             Receta LHC = R.BuscarRecetaPorId(id);

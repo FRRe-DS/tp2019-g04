@@ -23,7 +23,7 @@ namespace Microservicio.Controllers
 
         // GET: api/AlergiayEnfermedad
         [HttpGet]
-        public ActionResult<AlergiayEnfermedad> Get(string Nombre)
+        public AlergiayEnfermedad Get(string Nombre)
         {
             AlergiayEnfermedad AE = new AlergiayEnfermedad(_context);
             var AyE = AE.BuscarAyEporNombre(Nombre);
@@ -32,7 +32,7 @@ namespace Microservicio.Controllers
 
         // GET: api/AlergiayEnfermedad/5
         [HttpGet("{id}")]
-        public ActionResult<List<AlergiayEnfermedad>> Get(string Tipo,int Id)
+        public List<AlergiayEnfermedad> Get(string Tipo,int Id)
         {
             AlergiayEnfermedad AE = new AlergiayEnfermedad(_context);
             var AyE = AE.BuscarAlergiaOEnfermedad(Tipo);

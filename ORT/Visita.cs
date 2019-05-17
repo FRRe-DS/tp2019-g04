@@ -25,12 +25,11 @@ namespace ORT
         {
             _context = context;
         }
+
         public void GuardarVisita(Visita V)
         {
             _context.Visitas.Add(V);
-
             _context.SaveChanges();
-
         }
 
         public Visita BuscarVisitaPorId (int id)

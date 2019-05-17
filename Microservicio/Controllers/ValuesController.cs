@@ -19,21 +19,22 @@ namespace Microservicio.Controllers
         {
             _context = context;
         }
+
         // GET api/values
         [HttpGet]
         public  IEnumerable<HistoriaClinica> Get()
         {
             HistoriaClinica HC = new HistoriaClinica(_context);
-            var LHC = HC.GetHistoriasClicinas();
+            var LHC = HC.GetHistoriasClinicas();
             return LHC;
         }
 
         // GET api/values/5
         [HttpGet("{id}" , Name = "Get")]
-        public HistoriaClinica Get(int id)
+        public IEnumerable<HistoriaClinica> Get(int id)
         {
             HistoriaClinica HC = new HistoriaClinica(_context);
-            var LHC = HC.GetHistoriasClicinasPorPaciente(id);
+            var LHC = HC.GetHistoriasClinicasPorPaciente(id);
             return LHC;
         }
 
@@ -60,7 +61,7 @@ namespace Microservicio.Controllers
         public void Delete(int id)
         {
             HistoriaClinica HC = new HistoriaClinica(_context);
-            var LHC = HC.GetHistoriasClicinasPorPaciente(id);
+            var LHC = HC.GetHistoriasClinicasPorId(id);
             HC.BorrarHistoriaClinica(LHC);
             
         }

@@ -22,9 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="ORT">
-      <HintPath>..\ORT\bin\Debug\netstandard2.0\ORT.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\ORT\ORT.csproj" />
   </ItemGroup>
 
 </Project>

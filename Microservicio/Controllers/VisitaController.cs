@@ -23,7 +23,7 @@ namespace Microservicio.Controllers
 
         // GET: api/Visita
         [HttpGet]
-        public ActionResult<List<Visita>> Get([FromBody] string HC, DateTime FechaDesde, DateTime FechaHasta)
+        public List<Visita> Get([FromBody] string HC, DateTime FechaDesde, DateTime FechaHasta)
         {
             HistoriaClinica Vis = JsonConvert.DeserializeObject<HistoriaClinica>(HC);
             Visita V = new Visita(_context);
@@ -33,7 +33,7 @@ namespace Microservicio.Controllers
 
         // GET: api/Visita/5
         [HttpGet("{id}")]
-        public ActionResult<List<Visita>> Get(int id)
+        public List<Visita> Get(int id)
         {
             Visita V = new Visita(_context);
             List<Visita> Vis = V.BuscarVisitaPorMedicoId(id);
