@@ -11,17 +11,16 @@ namespace Microservicio.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AlergiayEnfermedadController : ControllerBase
+    public class AyEController : ControllerBase
     {
-
         private Model _context;
 
-        public AlergiayEnfermedadController(Model context)
+        public AyEController(Model context)
         {
             _context = context;
         }
 
-        // GET: api/AlergiayEnfermedad
+        // GET: api/AyE
         [HttpGet]
         public AlergiayEnfermedad Get(string Nombre)
         {
@@ -30,16 +29,16 @@ namespace Microservicio.Controllers
             return AyE;
         }
 
-        // GET: api/AlergiayEnfermedad/5
+        // GET: api/AyE/5
         [HttpGet("{id}")]
-        public List<AlergiayEnfermedad> Get(string Tipo,int Id)
+        public List<AlergiayEnfermedad> Get(string Tipo, int Id)
         {
             AlergiayEnfermedad AE = new AlergiayEnfermedad(_context);
             var AyE = AE.BuscarAlergiaOEnfermedad(Tipo);
             return AyE;
         }
 
-        // POST: api/AlergiayEnfermedad
+        // POST: api/AyE
         [HttpPost]
         public void Post([FromBody] string AyE)
         {
@@ -48,7 +47,7 @@ namespace Microservicio.Controllers
             ae.GuardarAlergiayEnfermedad(AE);
         }
 
-        // PUT: api/AlergiayEnfermedad/5
+        // PUT: api/AyE/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string AyE)
         {
