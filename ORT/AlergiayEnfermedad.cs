@@ -20,36 +20,42 @@ namespace ORT
 
         public AlergiayEnfermedad BuscarAyEporNombre(string NombreAE)
         {
-           
+           try{
             var AlergiayEnfermedad = _context.AlergiasyEnfermedades
                                     .SingleOrDefault(x => x.Nombre == NombreAE)
                                     ;
             return AlergiayEnfermedad;
+            }catch(Exception) {return null;}
         }
 
         public AlergiayEnfermedad BuscarAyEporId(int Id)
         {
-
+            try{
             var AlergiayEnfermedad = _context.AlergiasyEnfermedades
                                     .SingleOrDefault(x => x.Id == Id)
                                     ;
             return AlergiayEnfermedad;
+            }catch(Exception) {return null;}
         }
 
         public List<AlergiayEnfermedad> BuscarAlergiaOEnfermedad (string tipo)
         {
+            try{
             var AoE = _context.AlergiasyEnfermedades
                  .Where(x => x.Tipo.Contains(tipo))
                  .ToList();
             return AoE;
+            }catch(Exception){return null;}
 
         }
 
         public List<AlergiayEnfermedad> BuscarAlergiasyEnfermedades()
         {
+            try{
             var AoE = _context.AlergiasyEnfermedades
                  .ToList();
             return AoE;
+            }catch(Exception){return null;}
 
         }
         public bool GuardarAlergiayEnfermedad(AlergiayEnfermedad AE)

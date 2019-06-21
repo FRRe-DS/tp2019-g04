@@ -23,15 +23,19 @@ namespace ORT
 
         public LineaReceta BuscarLRporId(int id)
         {
+            try{
             var LR = _context.LineasRecetas
                 .SingleOrDefault(x => x.Id == id);
             return LR;
+            }catch(Exception){return null;}
         }
         public List<LineaReceta> BuscarLRporReceta(int RecetaId)
         {
+            try{
             var LR = _context.LineasRecetas
                 .Where(x => x.RecetaId == RecetaId).ToList();
             return LR;
+            }catch (Exception){return null;}
         }
 
         public bool GuardarLineaReceta (LineaReceta LN)

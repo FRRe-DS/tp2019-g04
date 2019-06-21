@@ -26,29 +26,35 @@ namespace ORT
         }
         public List<HistoriaClinica> GetHistoriasClinicas()
         {
+            try{
             var historiasClinicas = _context.HistoriasClinicas
                                     .Include(x=>x.AlergiasyEnfermedades)
                                     .Include(x=> x.Visitas)
                                      .ToList();
             return historiasClinicas;
+            }catch(Exception){return null;}
         }
 
         public HistoriaClinica GetHistoriaClinicaPorPaciente(int PacId)
         {
+            try{
             var historiaClinica =   _context.HistoriasClinicas
                                     .Include(x => x.AlergiasyEnfermedades)
                                     .Include(x => x.Visitas)
                                     .SingleOrDefault(x => x.PacienteId == PacId);
             return historiaClinica;
+            }catch(Exception){return null;}
         }
 
         public HistoriaClinica GetHistoriasClinicasPorId(int Id)
         {
+            try{
             var historiaClinica = _context.HistoriasClinicas
                 .Include(x => x.AlergiasyEnfermedades)
                                     .Include(x => x.Visitas)
                                   .SingleOrDefault(x => x.Id == Id);
             return historiaClinica;
+            }catch (Exception){return null;}
         }
 
         public bool GuardarHistoriaClinica(HistoriaClinica HC)
