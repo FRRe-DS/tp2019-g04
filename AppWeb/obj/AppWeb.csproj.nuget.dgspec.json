@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\carli\\source\\repos\\CS\\AppWeb\\AppWeb.csproj": {}
+    "D:\\CS\\AppWeb\\AppWeb.csproj": {}
   },
   "projects": {
-    "C:\\Users\\carli\\source\\repos\\CS\\AppWeb\\AppWeb.csproj": {
+    "D:\\CS\\AppWeb\\AppWeb.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\carli\\source\\repos\\CS\\AppWeb\\AppWeb.csproj",
+        "projectUniqueName": "D:\\CS\\AppWeb\\AppWeb.csproj",
         "projectName": "AppWeb",
-        "projectPath": "C:\\Users\\carli\\source\\repos\\CS\\AppWeb\\AppWeb.csproj",
-        "packagesPath": "C:\\Users\\carli\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\carli\\source\\repos\\CS\\AppWeb\\obj\\",
+        "projectPath": "D:\\CS\\AppWeb\\AppWeb.csproj",
+        "packagesPath": "C:\\Users\\fedez\\.nuget\\packages\\",
+        "outputPath": "D:\\CS\\AppWeb\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\ProgramData\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\carli\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\fedez\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -42,47 +42,6 @@
       },
       "frameworks": {
         "netcoreapp2.2": {
-          "dependencies": {
-            "Microsoft.AspNetCore.App": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[2.2.0, )",
-              "autoReferenced": true
-            },
-            "Microsoft.AspNetCore.Razor.Design": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[2.2.0, )"
-            },
-            "Microsoft.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[2.2.4, )"
-            },
-            "Microsoft.EntityFrameworkCore.SqlServer": {
-              "target": "Package",
-              "version": "[2.2.4, )"
-            },
-            "Microsoft.EntityFrameworkCore.Tools": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[2.2.4, )"
-            },
-            "Microsoft.NETCore.App": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[2.2.0, )",
-              "autoReferenced": true
-            },
-            "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
-              "target": "Package",
-              "version": "[1.0.2105168, )"
-            },
-            "Newtonsoft.Json": {
-              "target": "Package",
-              "version": "[12.0.2, )"
-            }
-          },
           "imports": [
             "net461"
           ],

@@ -24,28 +24,45 @@ namespace ORT
         public LineaReceta BuscarLRporId(int id)
         {
             var LR = _context.LineasRecetas
-                .Include(x=>x.Receta)
                 .SingleOrDefault(x => x.Id == id);
             return LR;
         }
-        public void GuardarLineaReceta (LineaReceta LN)
+        public List<LineaReceta> BuscarLRporReceta(int RecetaId)
         {
-            _context.LineasRecetas.Add(LN);
-
-            _context.SaveChanges();
+            var LR = _context.LineasRecetas
+                .Where(x => x.RecetaId == RecetaId).ToList();
+            return LR;
         }
-        public void ActualizarLineaReceta(LineaReceta LN)
+
+        public bool GuardarLineaReceta (LineaReceta LN)
         {
-            _context.LineasRecetas.Update(LN);
-
-            _context.SaveChanges();
-
+            try
+            {
+                _context.LineasRecetas.Add(LN);
+                _context.SaveChanges();
+                return true;
+            }
+            catch (Exception) { return false; }
         }
-        public void BorrarLineaReceta(LineaReceta LN)
+        public bool ActualizarLineaReceta(LineaReceta LN)
         {
+            try
+            {
+                _context.LineasRecetas.Update(LN);
+                _context.SaveChanges();
+                return true;
+            }
+            catch (Exception) { return false; }
+        }
+        public bool BorrarLineaReceta(LineaReceta LN)
+        {
+            try
+            { 
             _context.LineasRecetas.Remove(LN);
-
             _context.SaveChanges();
+                return true;
+            }
+            catch (Exception) { return false; }
         }
 
     }

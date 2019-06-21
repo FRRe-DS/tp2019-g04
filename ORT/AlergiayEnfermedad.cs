@@ -10,8 +10,6 @@ namespace ORT
         public int Id { get; set; }
         public string Nombre { get; set; }
         public string Tipo { get; set; }
-        public int HistoriaClinicaId { get; set; }
-        //public List<HistoriaClinica> HistoriaClinica { get; set;}
 
         private Model _context;
 
@@ -41,34 +39,50 @@ namespace ORT
         public List<AlergiayEnfermedad> BuscarAlergiaOEnfermedad (string tipo)
         {
             var AoE = _context.AlergiasyEnfermedades
-                 .Where(x => x.Tipo == tipo)
+                 .Where(x => x.Tipo.Contains(tipo))
                  .ToList();
             return AoE;
 
         }
 
-        public void GuardarAlergiayEnfermedad(AlergiayEnfermedad AE)
+        public List<AlergiayEnfermedad> BuscarAlergiasyEnfermedades()
         {
-            _context.AlergiasyEnfermedades.Add(AE);
-
-            _context.SaveChanges();
+            var AoE = _context.AlergiasyEnfermedades
+                 .ToList();
+            return AoE;
 
         }
-
-        public void ActualizarAlergiayEnfermedad(AlergiayEnfermedad AE)
+        public bool GuardarAlergiayEnfermedad(AlergiayEnfermedad AE)
         {
-            _context.AlergiasyEnfermedades.Update(AE);
-
-            _context.SaveChanges();
-
+            try
+            {
+                _context.AlergiasyEnfermedades.Add(AE);
+                _context.SaveChanges();
+                return true;
+            }
+            catch (Exception) { return false; }
         }
 
-        public void BorrarAlergiayEnfermedad(AlergiayEnfermedad AE)
+        public bool ActualizarAlergiayEnfermedad(AlergiayEnfermedad AE)
         {
-            _context.AlergiasyEnfermedades.Remove(AE);
+            try
+            {
+                _context.AlergiasyEnfermedades.Update(AE);
+                _context.SaveChanges();
+                return true;
+            }
+            catch (Exception) { return false; }
+        }
 
-            _context.SaveChanges();
-
+        public bool BorrarAlergiayEnfermedad(AlergiayEnfermedad AE)
+        {
+            try
+            {
+                _context.AlergiasyEnfermedades.Remove(AE);
+                _context.SaveChanges();
+                return true;
+            }
+            catch (Exception) { return false; }
         }
     }
 }

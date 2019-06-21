@@ -17,7 +17,7 @@ namespace ORT
         public List<Visita> Visitas { get; set; }
         public string Observaciones { get; set; }
         public string GrupoSanguineo { get; set; }
-       
+
 
         private Model _context;
         public HistoriaClinica(Model context)

@@ -34,16 +34,17 @@ namespace Test
             //M.Borrar(4);
 
 
-            var services = new ServiceCollection();
-            services.AddDbContext<Model>();
-            var servicePovide = services.BuildServiceProvider();
-            _context = servicePovide.GetService<Model>();
+            //var services = new ServiceCollection();
+            //services.AddDbContext<Model>();
+            //var servicePovide = services.BuildServiceProvider();
+            //_context = servicePovide.GetService<Model>();
 
-            HistoriaClinica hc = new HistoriaClinica(_context);
-            hc.Id = 100;
-            hc.PacienteId = 1;
+            //HistoriaClinica hc = new HistoriaClinica(_context);
+            //hc.Id = 100;
+            //hc.PacienteId = 1;
 
-            M.Guardar(hc);
+            //M.Guardar(hc);
+
             Console.WriteLine("Echo");
             Console.ReadLine();
         }

@@ -22,43 +22,62 @@ namespace Microservicio.Controllers
 
         // GET: api/LineaReceta
         [HttpGet]
-        public IEnumerable<string> Get()
+        public string Get()
         {
-            return null;
+            //LineaReceta LR = new LineaReceta(_context);
+            //var TLR = LR.GetHistoriasClinicas();
+            //return LHC;
+            return "VALUE";
         }
 
         // GET: api/LineaReceta/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public List<LineaReceta> Get(int id)
         {
-            return null;
+            LineaReceta LR = new LineaReceta(_context);
+            var TLR = LR.BuscarLRporReceta(id);
+            return TLR;
         }
 
         // POST: api/LineaReceta
         [HttpPost]
-        public void Post([FromBody] string lr)
+        public bool Post(LineaReceta LR)
         {
-            LineaReceta LR = JsonConvert.DeserializeObject<LineaReceta>(lr);
+
             LineaReceta LinR = new LineaReceta(_context);
-            LinR.GuardarLineaReceta(LR);
+            var estado = LinR.GuardarLineaReceta(LR);
+            if (estado == true)
+            {
+                return true;
+            }
+            else { return false; }
         }
 
         // PUT: api/LineaReceta/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string lr)
+        [HttpPut]
+        public bool Put(LineaReceta LR)
         {
-            LineaReceta LR = JsonConvert.DeserializeObject<LineaReceta>(lr);
             LineaReceta LinR = new LineaReceta(_context);
-            LinR.ActualizarLineaReceta(LR);
+            var estado =LinR.ActualizarLineaReceta(LR);
+            if (estado == true)
+            {
+                return true;
+            }
+            else { return false; }
         }
 
         // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public bool Delete(int id)
         {
             LineaReceta LinR = new LineaReceta(_context);
             var LR = LinR.BuscarLRporId(id);
-            LinR.BorrarLineaReceta(LR);
+            var estado=LinR.BorrarLineaReceta(LR);
+            if (estado == true)
+            {
+                return true;
+            }
+            else { return false; }
         }
     }
 }

@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.2",
-    "signature": "ba89706c0eb6bdb126ce4f7f1eb47fb38bf22671"
+    "signature": "feff11c905ade445b7fe0a4b77ff4b33ed55b792"
   },
   "compilationOptions": {
     "defines": [
@@ -26,6 +26,7 @@
         "dependencies": {
           "Microsoft.AspNetCore.App": "2.2.0",
           "Microsoft.AspNetCore.Razor.Design": "2.2.0",
+          "Microsoft.CodeDom.Providers.DotNetCompilerPlatform": "2.0.1",
           "Microsoft.EntityFrameworkCore": "2.2.4",
           "Microsoft.EntityFrameworkCore.SqlServer": "2.2.4",
           "Microsoft.EntityFrameworkCore.Tools": "2.2.4",
@@ -33,7 +34,7 @@
           "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": "1.0.2105168",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.2.0",
           "Newtonsoft.Json": "12.0.2",
-          "ORT": "1.0.0.0"
+          "ORT": "1.0.0"
         },
         "runtime": {
           "Microservicio.dll": {}
@@ -75,6 +76,17 @@
         },
         "compile": {
           "lib/netstandard1.3/Microsoft.CodeAnalysis.Workspaces.dll": {}
+        }
+      },
+      "Microsoft.CodeDom.Providers.DotNetCompilerPlatform/2.0.1": {
+        "runtime": {
+          "lib/net45/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll": {
+            "assemblyVersion": "2.0.1.0",
+            "fileVersion": "2.0.50905.0"
+          }
+        },
+        "compile": {
+          "lib/net45/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll": {}
         }
       },
       "Microsoft.EntityFrameworkCore/2.2.4": {
@@ -492,12 +504,14 @@
           "System.Runtime": "4.3.0"
         }
       },
-      "ORT/1.0.0.0": {
+      "ORT/1.0.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "2.2.4",
+          "Microsoft.EntityFrameworkCore.SqlServer": "2.2.4",
+          "Newtonsoft.Json": "12.0.2"
+        },
         "runtime": {
-          "ORT.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "ORT.dll": {}
         },
         "compile": {
           "ORT.dll": {}
@@ -3610,6 +3624,13 @@
       "path": "microsoft.codeanalysis.workspaces.common/2.8.0",
       "hashPath": "microsoft.codeanalysis.workspaces.common.2.8.0.nupkg.sha512"
     },
+    "Microsoft.CodeDom.Providers.DotNetCompilerPlatform/2.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-pn7IMmDyYRwFE316nnMs27GmedPAnjmOfWalWTO+pJkt6JMwdNDQ3yNbWTYG+7zmUU8P4JxhODhXQygDNGvCWQ==",
+      "path": "microsoft.codedom.providers.dotnetcompilerplatform/2.0.1",
+      "hashPath": "microsoft.codedom.providers.dotnetcompilerplatform.2.0.1.nupkg.sha512"
+    },
     "Microsoft.EntityFrameworkCore/2.2.4": {
       "type": "package",
       "serviceable": true,
@@ -3813,8 +3834,8 @@
       "path": "system.linq.queryable/4.0.1",
       "hashPath": "system.linq.queryable.4.0.1.nupkg.sha512"
     },
-    "ORT/1.0.0.0": {
-      "type": "reference",
+    "ORT/1.0.0": {
+      "type": "project",
       "serviceable": false,
       "sha512": ""
     },
@@ -5158,7 +5179,7 @@
     "System.Collections.Specialized/4.3.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-NoPBj0ykejqAWW4p4gGtrrL+3c84ZLSvGnHgq422ew1Rj4WKj1FA8/BCybqC111EtgcqUl6ZJNFYYS22HLgbjA==",
+      "sha512": "sha512-Epx8PoVZR0iuOnJJDzp7pWvdfMMOAvpUo95pC4ScH2mJuXkKA2Y4aR3cG9qt2klHgSons1WFh4kcGW7cSXvrxg==",
       "path": "system.collections.specialized/4.3.0",
       "hashPath": "system.collections.specialized.4.3.0.nupkg.sha512"
     },

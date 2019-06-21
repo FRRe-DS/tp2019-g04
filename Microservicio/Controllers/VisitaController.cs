@@ -23,11 +23,10 @@ namespace Microservicio.Controllers
 
         // GET: api/Visita
         [HttpGet]
-        public List<Visita> Get([FromBody] string HC, DateTime FechaDesde, DateTime FechaHasta)
+        public List<Visita> Get(HistoriaClinica HC, DateTime FechaDesde, DateTime FechaHasta)
         {
-            HistoriaClinica Vis = JsonConvert.DeserializeObject<HistoriaClinica>(HC);
             Visita V = new Visita(_context);
-            var Visit = V.BuscarVisitaPorFecha(Vis.Visitas, FechaDesde, FechaHasta);
+            var Visit = V.BuscarVisitaPorFecha(HC.Visitas, FechaDesde, FechaHasta);
             return Visit;
         }
 
@@ -42,29 +41,42 @@ namespace Microservicio.Controllers
 
         // POST: api/Visita
         [HttpPost]
-        public void Post([FromBody] string Vi)
+        public bool Post(Visita visita)
         {
-            Visita Vis = JsonConvert.DeserializeObject<Visita>(Vi);
             Visita V = new Visita(_context);
-            V.GuardarVisita(Vis);
+            var estado =  V.GuardarVisita(visita);
+            if (estado == true)
+            {
+                return true;
+            }
+            else { return false; }
         }
 
         // PUT: api/Visita/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string Vi)
+        [HttpPut]
+        public bool Put(Visita visita)
         {
-            Visita Vis = JsonConvert.DeserializeObject<Visita>(Vi);
             Visita V = new Visita(_context);
-            V.ActualizarVisita(Vis);
+            var estado = V.ActualizarVisita(visita);
+            if (estado == true)
+            {
+                return true;
+            }
+            else { return false; }
         }
 
         // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public bool Delete(int id)
         {
             Visita V = new Visita(_context);
             var VisitaB = V.BuscarVisitaPorId(id);
-            V.BorrarVisita(VisitaB);
+            var estado = V.BorrarVisita(VisitaB);
+            if (estado == true)
+            {
+                return true;
+            }
+            else { return false; }
         }
     }
 }

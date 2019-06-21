@@ -1,0 +1,9 @@
+C:\Users\carli\source\repos\CS\ORT\bin\Release\netstandard2.0\ORT.deps.json
+C:\Users\carli\source\repos\CS\ORT\bin\Release\netstandard2.0\ORT.dll
+C:\Users\carli\source\repos\CS\ORT\bin\Release\netstandard2.0\ORT.pdb
+C:\Users\carli\source\repos\CS\ORT\obj\Release\netstandard2.0\ORT.csprojAssemblyReference.cache
+C:\Users\carli\source\repos\CS\ORT\obj\Release\netstandard2.0\ORT.csproj.CoreCompileInputs.cache
+C:\Users\carli\source\repos\CS\ORT\obj\Release\netstandard2.0\ORT.AssemblyInfoInputs.cache
+C:\Users\carli\source\repos\CS\ORT\obj\Release\netstandard2.0\ORT.AssemblyInfo.cs
+C:\Users\carli\source\repos\CS\ORT\obj\Release\netstandard2.0\ORT.dll
+C:\Users\carli\source\repos\CS\ORT\obj\Release\netstandard2.0\ORT.pdb

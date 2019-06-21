@@ -8,7 +8,7 @@ using ORT;
 
 namespace Microservicio.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/historiaclinica")]
     [ApiController]
     public class ValuesController : ControllerBase
     {
@@ -30,40 +30,52 @@ namespace Microservicio.Controllers
         }
 
         // GET api/values/5
-        [HttpGet("{id}" , Name = "Get")]
-        public IEnumerable<HistoriaClinica> Get(int id)
+        [HttpGet("{id}")]
+        public HistoriaClinica Get(int id)
         {
             HistoriaClinica HC = new HistoriaClinica(_context);
-            var LHC = HC.GetHistoriasClinicasPorPaciente(id);
+            var LHC = HC.GetHistoriaClinicaPorPaciente(id);
             return LHC;
         }
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody] string HistC)
+        public bool Post(HistoriaClinica HistC)
         {
-            HistoriaClinica HistClinicas = JsonConvert.DeserializeObject<HistoriaClinica>(HistC);
             HistoriaClinica HC = new HistoriaClinica(_context);
-            HC.GuardarHistoriaClinica(HistClinicas);
+            var estado = HC.GuardarHistoriaClinica(HistC);
+            if(estado==true)
+            {
+                return true;
+            }else { return false; }
         }
 
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string HistC)
+        // PUT api/values
+        [HttpPut]
+        public bool Put(HistoriaClinica HistC)
         {
-            HistoriaClinica HistClinicas = JsonConvert.DeserializeObject<HistoriaClinica>(HistC);
             HistoriaClinica HC = new HistoriaClinica(_context);
-            HC.ActualizarHistoriaClinica(HistClinicas);
+            var estado = HC.ActualizarHistoriaClinica(HistC);
+            if (estado == true)
+            {
+                return true;
+            }
+            else { return false; }
         }
 
         // DELETE api/values/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public bool Delete(int id)
         {
             HistoriaClinica HC = new HistoriaClinica(_context);
             var LHC = HC.GetHistoriasClinicasPorId(id);
-            HC.BorrarHistoriaClinica(LHC);
-            
+            var estado = HC.BorrarHistoriaClinica(LHC);
+
+            if (estado == true)
+            {
+                return true;
+            }
+            else { return false; }
         }
     }
 }

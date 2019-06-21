@@ -1,6 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 
@@ -10,6 +12,8 @@ namespace ORT
     {
         public int Id { get; set; }
         public List<LineaReceta> LineaRecetas { get; set; }
+        public int VisitaId { get; set; }
+        public Visita Visita { get; set; }
 
         private Model _context;
 
@@ -20,31 +24,57 @@ namespace ORT
 
         public Receta BuscarRecetaPorId(int Id)
         {
+            try{
             var Receta = _context.Recetas
                 .Include(x=> x.LineaRecetas)
                 .SingleOrDefault(X => X.Id == Id);
             return Receta;
+            } catch(Exception){return null;}
         }
 
-        public void GuardarReceta(Receta R)
+        public List<Receta> BuscarReceta()
         {
-            _context.Recetas.Add(R);
+            try{
+            var Receta = _context.Recetas
+                .Include(x => x.LineaRecetas)
+                .Include(x => x.Visita)
+                .ToList();
+            return Receta;
+            } catch(Exception){return null;}
+        }
 
-            _context.SaveChanges();
+        public bool GuardarReceta(Receta R)
+        {
+            try
+            {
+                _context.Recetas.Add(R);
+                _context.SaveChanges();
+                return true;
+            }
+            catch (Exception) { return false; }
+        }
+        public bool ActualizarReceta(Receta R)
+        {
+
+            try
+            {
+                _context.Recetas.Update(R);
+                _context.SaveChanges();
+                return true;
+            }
+            catch (Exception) { return false; }
+     
 
         }
-        public void ActualizarReceta(Receta R)
+        public bool BorrarReceta(Receta R)
         {
-            _context.Recetas.Update(R);
-
-            _context.SaveChanges();
-
-        }
-        public void BorrarReceta(Receta R)
-        {
-            _context.Recetas.Remove(R);
-
-            _context.SaveChanges();
+            try
+            {
+                _context.Recetas.Remove(R);
+                _context.SaveChanges();
+                return true;
+            }
+            catch (Exception) { return false; }
 
         }
     }

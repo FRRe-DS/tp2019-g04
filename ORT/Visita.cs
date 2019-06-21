@@ -14,11 +14,13 @@ namespace ORT
         public string Diagnostico { get; set; }
         public string Sintomas { get; set; }
         public int MedicoId { get; set; }
-        public int RecetaId { get; set; }
+        public int HistoriaClinicaId { get; set; }
+        public HistoriaClinica HistoriaClinica { get; set; }
+        public int PartidaMedicamentoId { get; set; }
+
+
+        public int? RecetaId { get; set; }
         public Receta Receta { get; set; }
-        public bool PartidaMedicamentoRealizado { get; set; }
-
-
 
         private Model _context;
         public Visita(Model context)
@@ -26,49 +28,68 @@ namespace ORT
             _context = context;
         }
 
-        public void GuardarVisita(Visita V)
+        public bool GuardarVisita(Visita V)
         {
-            _context.Visitas.Add(V);
-            _context.SaveChanges();
+            try
+            {
+                _context.Visitas.Add(V);
+                _context.SaveChanges();
+                return true;
+            }catch (Exception) { return false; }
         }
 
         public Visita BuscarVisitaPorId (int id)
         {
-            var Visita = _context.Visitas
+            try{
+                var Visita = _context.Visitas
                 .Include(x=> x.Receta)
                 .SingleOrDefault(x => x.Id == id);
             return Visita;
+            }catch (Exception){return null;}
+            
         }
 
         public List<Visita> BuscarVisitaPorFecha(List<Visita> VisitasHC, DateTime FechaDesde, DateTime FechaHasta)
         {
-            var RangoDeVisitas = VisitasHC
+            try{
+                var RangoDeVisitas = VisitasHC
                 .Where(x => x.Fecha >= FechaDesde)
                 .Where(x => x.Fecha <= FechaHasta).ToList();
             return RangoDeVisitas;
+            }catch(Exception){return null;}
+            
         }
 
         public List<Visita> BuscarVisitaPorMedicoId(int idMedico)
         {
-            var VisitasMedico = _context.Visitas
+            try{
+                var VisitasMedico = _context.Visitas
                 .Include(x=>x.Receta)
                 .Where(x => x.MedicoId == idMedico).ToList();
             return VisitasMedico;
+            } catch(Exception){return null;}
+            
         }
 
-        public void ActualizarVisita(Visita V)
+        public bool ActualizarVisita(Visita V)
         {
-            _context.Visitas.Update(V);
-
-            _context.SaveChanges();
+            try
+            {
+                _context.Visitas.Update(V);
+                _context.SaveChanges();
+                return true;
+            }
+            catch(Exception) { return false; }
 
         }
-        public void BorrarVisita(Visita V)
+        public bool BorrarVisita(Visita V)
         {
-            _context.Visitas.Remove(V);
-
-            _context.SaveChanges();
-
+            try
+            {
+                _context.Visitas.Remove(V);
+                _context.SaveChanges();
+                return true;
+            }catch(Exception) { return false; }
         }
     }
 }

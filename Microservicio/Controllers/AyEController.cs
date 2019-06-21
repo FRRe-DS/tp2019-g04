@@ -9,7 +9,7 @@ using ORT;
 
 namespace Microservicio.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/alergiayenfermedad")]
     [ApiController]
     public class AyEController : ControllerBase
     {
@@ -22,47 +22,61 @@ namespace Microservicio.Controllers
 
         // GET: api/AyE
         [HttpGet]
-        public AlergiayEnfermedad Get(string Nombre)
+        public List<AlergiayEnfermedad> Get()
         {
             AlergiayEnfermedad AE = new AlergiayEnfermedad(_context);
-            var AyE = AE.BuscarAyEporNombre(Nombre);
+            var AyE = AE.BuscarAlergiasyEnfermedades();
             return AyE;
         }
 
         // GET: api/AyE/5
-        [HttpGet("{id}")]
-        public List<AlergiayEnfermedad> Get(string Tipo, int Id)
+        [HttpGet("{tipo}")]
+        public List<AlergiayEnfermedad> Get(string tipo)
         {
             AlergiayEnfermedad AE = new AlergiayEnfermedad(_context);
-            var AyE = AE.BuscarAlergiaOEnfermedad(Tipo);
+            var AyE = AE.BuscarAlergiaOEnfermedad(tipo);
             return AyE;
         }
 
         // POST: api/AyE
         [HttpPost]
-        public void Post([FromBody] string AyE)
+        public bool Post(AlergiayEnfermedad AyE)
         {
-            AlergiayEnfermedad AE = JsonConvert.DeserializeObject<AlergiayEnfermedad>(AyE);
             AlergiayEnfermedad ae = new AlergiayEnfermedad(_context);
-            ae.GuardarAlergiayEnfermedad(AE);
+            var estado = ae.GuardarAlergiayEnfermedad(AyE);
+            if (estado == true)
+            {
+                return true;
+            }
+            else { return false; }
         }
 
         // PUT: api/AyE/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string AyE)
+        [HttpPut]
+        public bool Put(AlergiayEnfermedad AyE)
         {
-            AlergiayEnfermedad AE = JsonConvert.DeserializeObject<AlergiayEnfermedad>(AyE);
+            
             AlergiayEnfermedad ae = new AlergiayEnfermedad(_context);
-            ae.ActualizarAlergiayEnfermedad(AE);
+            var estado=ae.ActualizarAlergiayEnfermedad(AyE);
+            if (estado == true)
+            {
+                return true;
+            }
+            else { return false; }
         }
 
         // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public bool Delete(int id)
         {
             AlergiayEnfermedad ae = new AlergiayEnfermedad(_context);
             var AyE = ae.BuscarAyEporId(id);
-            ae.BorrarAlergiayEnfermedad(AyE);
+            var estado= ae.BorrarAlergiayEnfermedad(AyE);
+            if (estado == true)
+            {
+                return true;
+            }
+            else { return false; }
         }
     }
 }

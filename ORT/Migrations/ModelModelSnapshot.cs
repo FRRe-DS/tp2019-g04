@@ -25,7 +25,7 @@ namespace ORT.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("HistoriaClinicaId");
+                    b.Property<int?>("HistoriaClinicaId");
 
                     b.Property<string>("Nombre");
 
@@ -46,11 +46,16 @@ namespace ORT.Migrations
 
                     b.Property<DateTime>("FechaInicio");
 
+                    b.Property<string>("GrupoSanguineo");
+
                     b.Property<string>("Observaciones");
 
                     b.Property<int>("PacienteId");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("PacienteId")
+                        .IsUnique();
 
                     b.ToTable("HistoriasClinicas");
                 });
@@ -80,6 +85,8 @@ namespace ORT.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("VisitaId");
+
                     b.HasKey("Id");
 
                     b.ToTable("Recetas");
@@ -95,13 +102,13 @@ namespace ORT.Migrations
 
                     b.Property<DateTime>("Fecha");
 
-                    b.Property<int?>("HistoriaClinicaId");
+                    b.Property<int>("HistoriaClinicaId");
 
                     b.Property<int>("MedicoId");
 
-                    b.Property<bool>("PartidaMedicamentoRealizado");
+                    b.Property<int>("PartidaMedicamentoId");
 
-                    b.Property<int>("RecetaId");
+                    b.Property<int?>("RecetaId");
 
                     b.Property<string>("Sintomas");
 
@@ -109,7 +116,9 @@ namespace ORT.Migrations
 
                     b.HasIndex("HistoriaClinicaId");
 
-                    b.HasIndex("RecetaId");
+                    b.HasIndex("RecetaId")
+                        .IsUnique()
+                        .HasFilter("[RecetaId] IS NOT NULL");
 
                     b.ToTable("Visitas");
                 });
@@ -118,8 +127,7 @@ namespace ORT.Migrations
                 {
                     b.HasOne("ORT.HistoriaClinica")
                         .WithMany("AlergiasyEnfermedades")
-                        .HasForeignKey("HistoriaClinicaId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("HistoriaClinicaId");
                 });
 
             modelBuilder.Entity("ORT.LineaReceta", b =>
@@ -132,14 +140,14 @@ namespace ORT.Migrations
 
             modelBuilder.Entity("ORT.Visita", b =>
                 {
-                    b.HasOne("ORT.HistoriaClinica")
+                    b.HasOne("ORT.HistoriaClinica", "HistoriaClinica")
                         .WithMany("Visitas")
-                        .HasForeignKey("HistoriaClinicaId");
+                        .HasForeignKey("HistoriaClinicaId")
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("ORT.Receta", "Receta")
-                        .WithMany()
-                        .HasForeignKey("RecetaId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .WithOne("Visita")
+                        .HasForeignKey("ORT.Visita", "RecetaId");
                 });
 #pragma warning restore 612, 618
         }
