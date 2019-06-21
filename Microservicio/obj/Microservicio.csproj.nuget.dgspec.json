@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\CS\\Microservicio\\Microservicio.csproj": {}
+    "C:\\Users\\carli\\source\\repos\\tp2019-g04\\Microservicio\\Microservicio.csproj": {}
   },
   "projects": {
-    "D:\\CS\\Microservicio\\Microservicio.csproj": {
+    "C:\\Users\\carli\\source\\repos\\tp2019-g04\\Microservicio\\Microservicio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\CS\\Microservicio\\Microservicio.csproj",
+        "projectUniqueName": "C:\\Users\\carli\\source\\repos\\tp2019-g04\\Microservicio\\Microservicio.csproj",
         "projectName": "Microservicio",
-        "projectPath": "D:\\CS\\Microservicio\\Microservicio.csproj",
-        "packagesPath": "C:\\Users\\fedez\\.nuget\\packages\\",
-        "outputPath": "D:\\CS\\Microservicio\\obj\\",
+        "projectPath": "C:\\Users\\carli\\source\\repos\\tp2019-g04\\Microservicio\\Microservicio.csproj",
+        "packagesPath": "C:\\Users\\carli\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\carli\\source\\repos\\tp2019-g04\\Microservicio\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\ProgramData\\Xamarin\\NuGet\\",
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\fedez\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\carli\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -32,8 +32,8 @@
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "D:\\CS\\ORT\\ORT.csproj": {
-                "projectPath": "D:\\CS\\ORT\\ORT.csproj"
+              "C:\\Users\\carli\\source\\repos\\tp2019-g04\\ORT\\ORT.csproj": {
+                "projectPath": "C:\\Users\\carli\\source\\repos\\tp2019-g04\\ORT\\ORT.csproj"
               }
             }
           }
@@ -46,6 +46,55 @@
       },
       "frameworks": {
         "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.AspNetCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            },
+            "Microsoft.AspNetCore.Razor.Design": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.CodeDom.Providers.DotNetCompilerPlatform": {
+              "target": "Package",
+              "version": "[2.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[2.2.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[2.2.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.4, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            },
+            "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
+              "target": "Package",
+              "version": "[1.0.2105168, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[2.2.3, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.2, )"
+            }
+          },
           "imports": [
             "net461"
           ],
@@ -54,21 +103,21 @@
         }
       }
     },
-    "D:\\CS\\ORT\\ORT.csproj": {
+    "C:\\Users\\carli\\source\\repos\\tp2019-g04\\ORT\\ORT.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\CS\\ORT\\ORT.csproj",
+        "projectUniqueName": "C:\\Users\\carli\\source\\repos\\tp2019-g04\\ORT\\ORT.csproj",
         "projectName": "ORT",
-        "projectPath": "D:\\CS\\ORT\\ORT.csproj",
-        "packagesPath": "C:\\Users\\fedez\\.nuget\\packages\\",
-        "outputPath": "D:\\CS\\ORT\\obj\\",
+        "projectPath": "C:\\Users\\carli\\source\\repos\\tp2019-g04\\ORT\\ORT.csproj",
+        "packagesPath": "C:\\Users\\carli\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\carli\\source\\repos\\tp2019-g04\\ORT\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\ProgramData\\Xamarin\\NuGet\\",
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\fedez\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\carli\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],

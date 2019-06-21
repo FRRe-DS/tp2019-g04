@@ -32,6 +32,10 @@ namespace Microservicio
             option.UseSqlServer(Configuration["ConnectionString:DefaultConnection"])
             );
 
+            services.AddMvc().AddJsonOptions(
+            options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+        );
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 

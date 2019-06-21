@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\CS\\ORT\\ORT.csproj": {}
+    "C:\\Users\\carli\\source\\repos\\tp2019-g04\\ORT\\ORT.csproj": {}
   },
   "projects": {
-    "D:\\CS\\ORT\\ORT.csproj": {
+    "C:\\Users\\carli\\source\\repos\\tp2019-g04\\ORT\\ORT.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\CS\\ORT\\ORT.csproj",
+        "projectUniqueName": "C:\\Users\\carli\\source\\repos\\tp2019-g04\\ORT\\ORT.csproj",
         "projectName": "ORT",
-        "projectPath": "D:\\CS\\ORT\\ORT.csproj",
-        "packagesPath": "C:\\Users\\fedez\\.nuget\\packages\\",
-        "outputPath": "D:\\CS\\ORT\\obj\\",
+        "projectPath": "C:\\Users\\carli\\source\\repos\\tp2019-g04\\ORT\\ORT.csproj",
+        "packagesPath": "C:\\Users\\carli\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\carli\\source\\repos\\tp2019-g04\\ORT\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\ProgramData\\Xamarin\\NuGet\\",
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\fedez\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\carli\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
