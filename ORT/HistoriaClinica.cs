@@ -16,7 +16,8 @@ namespace ORT
         public List<AlergiayEnfermedad> AlergiasyEnfermedades { get; set; }
         public List<Visita> Visitas { get; set; }
         public string Observaciones { get; set; }
-
+        public string GrupoSanguineo { get; set; }
+       
 
         private Model _context;
         public HistoriaClinica(Model context)
@@ -32,12 +33,12 @@ namespace ORT
             return historiasClinicas;
         }
 
-        public List<HistoriaClinica> GetHistoriasClinicasPorPaciente(int PacId)
+        public HistoriaClinica GetHistoriaClinicaPorPaciente(int PacId)
         {
-            var historiaClinica = _context.HistoriasClinicas
-                .Include(x => x.AlergiasyEnfermedades)
+            var historiaClinica =   _context.HistoriasClinicas
+                                    .Include(x => x.AlergiasyEnfermedades)
                                     .Include(x => x.Visitas)
-                .Where(x => x.PacienteId == PacId).ToList();
+                                    .SingleOrDefault(x => x.PacienteId == PacId);
             return historiaClinica;
         }
 
@@ -50,25 +51,34 @@ namespace ORT
             return historiaClinica;
         }
 
-        public void GuardarHistoriaClinica(HistoriaClinica HC)
+        public bool GuardarHistoriaClinica(HistoriaClinica HC)
         {
-            _context.HistoriasClinicas.Add(HC);
-            _context.SaveChanges();
+            try
+            {
+                _context.HistoriasClinicas.Add(HC);
+                _context.SaveChanges();
+                return true;
+            }catch(Exception) { return false;}
         }
 
-        public void ActualizarHistoriaClinica(HistoriaClinica HC)
+        public bool ActualizarHistoriaClinica(HistoriaClinica HC)
         {
-            _context.HistoriasClinicas.Update(HC);
-            _context.SaveChanges();
-
+            try
+            {
+                _context.HistoriasClinicas.Update(HC);
+                _context.SaveChanges();
+                return true;
+            }catch(Exception) { return false; }
         }
 
-        public void BorrarHistoriaClinica(HistoriaClinica HC)
+        public bool BorrarHistoriaClinica(HistoriaClinica HC)
         {
-            
+            try
+            {
                 _context.HistoriasClinicas.Remove(HC);
                 _context.SaveChanges();
-            
+                return true;
+            }catch(Exception) { return false; }
         }
     }
 }
