@@ -16,3 +16,12 @@ C:\Users\carli\source\repos\tp2019-g04\ORT\obj\Debug\netstandard2.0\ORT.Assembly
 C:\Users\carli\source\repos\tp2019-g04\ORT\obj\Debug\netstandard2.0\ORT.AssemblyInfo.cs
 C:\Users\carli\source\repos\tp2019-g04\ORT\obj\Debug\netstandard2.0\ORT.dll
 C:\Users\carli\source\repos\tp2019-g04\ORT\obj\Debug\netstandard2.0\ORT.pdb
+C:\Users\fedez\Desktop\tp2019-g04\ORT\bin\Debug\netstandard2.0\ORT.deps.json
+C:\Users\fedez\Desktop\tp2019-g04\ORT\bin\Debug\netstandard2.0\ORT.dll
+C:\Users\fedez\Desktop\tp2019-g04\ORT\bin\Debug\netstandard2.0\ORT.pdb
+C:\Users\fedez\Desktop\tp2019-g04\ORT\obj\Debug\netstandard2.0\ORT.csproj.CoreCompileInputs.cache
+C:\Users\fedez\Desktop\tp2019-g04\ORT\obj\Debug\netstandard2.0\ORT.AssemblyInfoInputs.cache
+C:\Users\fedez\Desktop\tp2019-g04\ORT\obj\Debug\netstandard2.0\ORT.AssemblyInfo.cs
+C:\Users\fedez\Desktop\tp2019-g04\ORT\obj\Debug\netstandard2.0\ORT.dll
+C:\Users\fedez\Desktop\tp2019-g04\ORT\obj\Debug\netstandard2.0\ORT.pdb
+C:\Users\fedez\Desktop\tp2019-g04\ORT\obj\Debug\netstandard2.0\ORT.csprojAssemblyReference.cache

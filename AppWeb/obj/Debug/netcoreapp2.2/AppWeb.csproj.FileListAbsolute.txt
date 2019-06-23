@@ -32,6 +32,42 @@ C:\Users\carli\source\repos\CS\AppWeb\obj\Debug\netcoreapp2.2\AppWeb.pdb
 C:\Users\carli\source\repos\CS\AppWeb\bin\Debug\netcoreapp2.2\Microservicio.dll
 C:\Users\carli\source\repos\CS\AppWeb\bin\Debug\netcoreapp2.2\Microservicio.pdb
 C:\Users\carli\source\repos\CS\AppWeb\obj\Debug\netcoreapp2.2\AppWeb.csprojAssemblyReference.cache
+<<<<<<< HEAD
+C:\Users\fedez\Desktop\tp2019-g04\AppWeb\obj\Debug\netcoreapp2.2\AppWeb.csprojAssemblyReference.cache
+C:\Users\fedez\Desktop\tp2019-g04\AppWeb\obj\Debug\netcoreapp2.2\AppWeb.csproj.CoreCompileInputs.cache
+C:\Users\fedez\Desktop\tp2019-g04\AppWeb\obj\Debug\netcoreapp2.2\AppWeb.AssemblyInfoInputs.cache
+C:\Users\fedez\Desktop\tp2019-g04\AppWeb\obj\Debug\netcoreapp2.2\AppWeb.AssemblyInfo.cs
+C:\Users\fedez\Desktop\tp2019-g04\AppWeb\obj\Debug\netcoreapp2.2\AppWeb.dll
+C:\Users\fedez\Desktop\tp2019-g04\AppWeb\obj\Debug\netcoreapp2.2\AppWeb.pdb
+C:\Users\fedez\Desktop\tp2019-g04\AppWeb\bin\Debug\netcoreapp2.2\AppWeb.deps.json
+C:\Users\fedez\Desktop\tp2019-g04\AppWeb\bin\Debug\netcoreapp2.2\AppWeb.runtimeconfig.json
+C:\Users\fedez\Desktop\tp2019-g04\AppWeb\bin\Debug\netcoreapp2.2\AppWeb.runtimeconfig.dev.json
+C:\Users\fedez\Desktop\tp2019-g04\AppWeb\bin\Debug\netcoreapp2.2\AppWeb.dll
+C:\Users\fedez\Desktop\tp2019-g04\AppWeb\bin\Debug\netcoreapp2.2\AppWeb.pdb
+C:\Users\fedez\Desktop\tp2019-g04\AppWeb\bin\Debug\netcoreapp2.2\AppWeb.Views.dll
+C:\Users\fedez\Desktop\tp2019-g04\AppWeb\bin\Debug\netcoreapp2.2\AppWeb.Views.pdb
+C:\Users\fedez\Desktop\tp2019-g04\AppWeb\bin\Debug\netcoreapp2.2\Microservicio.dll
+C:\Users\fedez\Desktop\tp2019-g04\AppWeb\bin\Debug\netcoreapp2.2\ORT.dll
+C:\Users\fedez\Desktop\tp2019-g04\AppWeb\bin\Debug\netcoreapp2.2\Microservicio.pdb
+C:\Users\fedez\Desktop\tp2019-g04\AppWeb\bin\Debug\netcoreapp2.2\ORT.pdb
+C:\Users\fedez\Desktop\tp2019-g04\AppWeb\obj\Debug\netcoreapp2.2\AppWeb.RazorAssemblyInfo.cache
+C:\Users\fedez\Desktop\tp2019-g04\AppWeb\obj\Debug\netcoreapp2.2\AppWeb.RazorAssemblyInfo.cs
+C:\Users\fedez\Desktop\tp2019-g04\AppWeb\obj\Debug\netcoreapp2.2\AppWeb.TagHelpers.input.cache
+C:\Users\fedez\Desktop\tp2019-g04\AppWeb\obj\Debug\netcoreapp2.2\AppWeb.TagHelpers.output.cache
+C:\Users\fedez\Desktop\tp2019-g04\AppWeb\obj\Debug\netcoreapp2.2\AppWeb.RazorCoreGenerate.cache
+C:\Users\fedez\Desktop\tp2019-g04\AppWeb\obj\Debug\netcoreapp2.2\Razor\Pages\Error.g.cshtml.cs
+C:\Users\fedez\Desktop\tp2019-g04\AppWeb\obj\Debug\netcoreapp2.2\Razor\Pages\Index.g.cshtml.cs
+C:\Users\fedez\Desktop\tp2019-g04\AppWeb\obj\Debug\netcoreapp2.2\Razor\Pages\Privacy.g.cshtml.cs
+C:\Users\fedez\Desktop\tp2019-g04\AppWeb\obj\Debug\netcoreapp2.2\Razor\Pages\Shared\_CookieConsentPartial.g.cshtml.cs
+C:\Users\fedez\Desktop\tp2019-g04\AppWeb\obj\Debug\netcoreapp2.2\Razor\Pages\Shared\_Layout.g.cshtml.cs
+C:\Users\fedez\Desktop\tp2019-g04\AppWeb\obj\Debug\netcoreapp2.2\Razor\Pages\Shared\_ValidationScriptsPartial.g.cshtml.cs
+C:\Users\fedez\Desktop\tp2019-g04\AppWeb\obj\Debug\netcoreapp2.2\Razor\Pages\_ViewImports.g.cshtml.cs
+C:\Users\fedez\Desktop\tp2019-g04\AppWeb\obj\Debug\netcoreapp2.2\Razor\Pages\_ViewStart.g.cshtml.cs
+C:\Users\fedez\Desktop\tp2019-g04\AppWeb\obj\Debug\netcoreapp2.2\AppWeb.RazorTargetAssemblyInfo.cache
+C:\Users\fedez\Desktop\tp2019-g04\AppWeb\obj\Debug\netcoreapp2.2\AppWeb.RazorTargetAssemblyInfo.cs
+C:\Users\fedez\Desktop\tp2019-g04\AppWeb\obj\Debug\netcoreapp2.2\AppWeb.Views.pdb
+C:\Users\fedez\Desktop\tp2019-g04\AppWeb\obj\Debug\netcoreapp2.2\AppWeb.csproj.CopyComplete
+=======
 C:\Users\carli\source\repos\tp2019-g04\AppWeb\bin\Debug\netcoreapp2.2\AppWeb.deps.json
 C:\Users\carli\source\repos\tp2019-g04\AppWeb\bin\Debug\netcoreapp2.2\AppWeb.runtimeconfig.json
 C:\Users\carli\source\repos\tp2019-g04\AppWeb\bin\Debug\netcoreapp2.2\AppWeb.runtimeconfig.dev.json
@@ -66,3 +102,4 @@ C:\Users\carli\source\repos\tp2019-g04\AppWeb\obj\Debug\netcoreapp2.2\AppWeb.Vie
 C:\Users\carli\source\repos\tp2019-g04\AppWeb\obj\Debug\netcoreapp2.2\AppWeb.csproj.CopyComplete
 C:\Users\carli\source\repos\tp2019-g04\AppWeb\obj\Debug\netcoreapp2.2\AppWeb.dll
 C:\Users\carli\source\repos\tp2019-g04\AppWeb\obj\Debug\netcoreapp2.2\AppWeb.pdb
+>>>>>>> 4fb7ca1d3db7dfe2a74ee129fe8c91f7ce9c7b90

@@ -1,6 +1,19 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
+    "C:\\Users\\fedez\\Desktop\\tp2019-g04\\AppWeb\\AppWeb.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\fedez\\Desktop\\tp2019-g04\\AppWeb\\AppWeb.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\fedez\\Desktop\\tp2019-g04\\AppWeb\\AppWeb.csproj",
+        "projectName": "AppWeb",
+        "projectPath": "C:\\Users\\fedez\\Desktop\\tp2019-g04\\AppWeb\\AppWeb.csproj",
+        "packagesPath": "C:\\Users\\fedez\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\fedez\\Desktop\\tp2019-g04\\AppWeb\\obj\\",
+=======
     "C:\\Users\\carli\\source\\repos\\tp2019-g04\\AppWeb\\AppWeb.csproj": {}
   },
   "projects": {
@@ -12,6 +25,7 @@
         "projectPath": "C:\\Users\\carli\\source\\repos\\tp2019-g04\\AppWeb\\AppWeb.csproj",
         "packagesPath": "C:\\Users\\carli\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\carli\\source\\repos\\tp2019-g04\\AppWeb\\obj\\",
+>>>>>>> 4fb7ca1d3db7dfe2a74ee129fe8c91f7ce9c7b90
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -76,7 +90,15 @@
             },
             "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
               "target": "Package",
+<<<<<<< HEAD
+              "version": "[1.7.10, )"
+            },
+            "NETStandard.Library": {
+              "target": "Package",
+              "version": "[2.0.3, )"
+=======
               "version": "[1.0.2105168, )"
+>>>>>>> 4fb7ca1d3db7dfe2a74ee129fe8c91f7ce9c7b90
             },
             "Newtonsoft.Json": {
               "target": "Package",

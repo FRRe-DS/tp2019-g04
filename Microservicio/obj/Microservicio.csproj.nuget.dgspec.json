@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\carli\\source\\repos\\tp2019-g04\\Microservicio\\Microservicio.csproj": {}
+    "C:\\Users\\fedez\\Desktop\\tp2019-g04\\Microservicio\\Microservicio.csproj": {}
   },
   "projects": {
-    "C:\\Users\\carli\\source\\repos\\tp2019-g04\\Microservicio\\Microservicio.csproj": {
+    "C:\\Users\\fedez\\Desktop\\tp2019-g04\\Microservicio\\Microservicio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\carli\\source\\repos\\tp2019-g04\\Microservicio\\Microservicio.csproj",
+        "projectUniqueName": "C:\\Users\\fedez\\Desktop\\tp2019-g04\\Microservicio\\Microservicio.csproj",
         "projectName": "Microservicio",
-        "projectPath": "C:\\Users\\carli\\source\\repos\\tp2019-g04\\Microservicio\\Microservicio.csproj",
-        "packagesPath": "C:\\Users\\carli\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\carli\\source\\repos\\tp2019-g04\\Microservicio\\obj\\",
+        "projectPath": "C:\\Users\\fedez\\Desktop\\tp2019-g04\\Microservicio\\Microservicio.csproj",
+        "packagesPath": "C:\\Users\\fedez\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\fedez\\Desktop\\tp2019-g04\\Microservicio\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\carli\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\fedez\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -32,8 +32,8 @@
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "C:\\Users\\carli\\source\\repos\\tp2019-g04\\ORT\\ORT.csproj": {
-                "projectPath": "C:\\Users\\carli\\source\\repos\\tp2019-g04\\ORT\\ORT.csproj"
+              "C:\\Users\\fedez\\Desktop\\tp2019-g04\\ORT\\ORT.csproj": {
+                "projectPath": "C:\\Users\\fedez\\Desktop\\tp2019-g04\\ORT\\ORT.csproj"
               }
             }
           }
@@ -84,11 +84,15 @@
             },
             "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
               "target": "Package",
-              "version": "[1.0.2105168, )"
+              "version": "[1.7.10, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[2.2.3, )"
+            },
+            "NETStandard.Library": {
+              "target": "Package",
+              "version": "[2.0.3, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",
@@ -103,21 +107,21 @@
         }
       }
     },
-    "C:\\Users\\carli\\source\\repos\\tp2019-g04\\ORT\\ORT.csproj": {
+    "C:\\Users\\fedez\\Desktop\\tp2019-g04\\ORT\\ORT.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\carli\\source\\repos\\tp2019-g04\\ORT\\ORT.csproj",
+        "projectUniqueName": "C:\\Users\\fedez\\Desktop\\tp2019-g04\\ORT\\ORT.csproj",
         "projectName": "ORT",
-        "projectPath": "C:\\Users\\carli\\source\\repos\\tp2019-g04\\ORT\\ORT.csproj",
-        "packagesPath": "C:\\Users\\carli\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\carli\\source\\repos\\tp2019-g04\\ORT\\obj\\",
+        "projectPath": "C:\\Users\\fedez\\Desktop\\tp2019-g04\\ORT\\ORT.csproj",
+        "packagesPath": "C:\\Users\\fedez\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\fedez\\Desktop\\tp2019-g04\\ORT\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\carli\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\fedez\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -142,6 +146,10 @@
       "frameworks": {
         "netstandard2.0": {
           "dependencies": {
+            "Microsoft.AspNetCore.Razor.Design": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[2.2.4, )"
@@ -155,6 +163,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[2.2.4, )"
+            },
+            "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
+              "target": "Package",
+              "version": "[1.7.10, )"
             },
             "NETStandard.Library": {
               "suppressParent": "All",

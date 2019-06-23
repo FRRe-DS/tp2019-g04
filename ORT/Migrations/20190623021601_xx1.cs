@@ -9,6 +9,20 @@ namespace ORT.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
+                name: "AlergiasyEnfermedades",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Nombre = table.Column<string>(nullable: true),
+                    Tipo = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AlergiasyEnfermedades", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "HistoriasClinicas",
                 columns: table => new
                 {
@@ -25,24 +39,27 @@ namespace ORT.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "AlergiasyEnfermedades",
+                name: "AyEdeHistoriasClinicas",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Nombre = table.Column<string>(nullable: true),
-                    Tipo = table.Column<string>(nullable: true),
-                    HistoriaClinicaId = table.Column<int>(nullable: true)
+                    HistoriaClinicaId = table.Column<int>(nullable: false),
+                    AlergiayEnfermedadId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_AlergiasyEnfermedades", x => x.Id);
+                    table.PrimaryKey("PK_AyEdeHistoriasClinicas", x => new { x.HistoriaClinicaId, x.AlergiayEnfermedadId });
                     table.ForeignKey(
-                        name: "FK_AlergiasyEnfermedades_HistoriasClinicas_HistoriaClinicaId",
+                        name: "FK_AyEdeHistoriasClinicas_AlergiasyEnfermedades_AlergiayEnfermedadId",
+                        column: x => x.AlergiayEnfermedadId,
+                        principalTable: "AlergiasyEnfermedades",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_AyEdeHistoriasClinicas_HistoriasClinicas_HistoriaClinicaId",
                         column: x => x.HistoriaClinicaId,
                         principalTable: "HistoriasClinicas",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -110,9 +127,9 @@ namespace ORT.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_AlergiasyEnfermedades_HistoriaClinicaId",
-                table: "AlergiasyEnfermedades",
-                column: "HistoriaClinicaId");
+                name: "IX_AyEdeHistoriasClinicas_AlergiayEnfermedadId",
+                table: "AyEdeHistoriasClinicas",
+                column: "AlergiayEnfermedadId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_HistoriasClinicas_PacienteId",
@@ -140,10 +157,13 @@ namespace ORT.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "AlergiasyEnfermedades");
+                name: "AyEdeHistoriasClinicas");
 
             migrationBuilder.DropTable(
                 name: "LineasRecetas");
+
+            migrationBuilder.DropTable(
+                name: "AlergiasyEnfermedades");
 
             migrationBuilder.DropTable(
                 name: "Recetas");
