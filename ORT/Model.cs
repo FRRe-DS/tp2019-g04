@@ -15,6 +15,7 @@ namespace ORT
         public DbSet<Receta> Recetas { get; set; }
         public DbSet<LineaReceta> LineasRecetas { get; set; }
         public DbSet<AlergiayEnfermedad> AlergiasyEnfermedades { get; set; }
+        public DbSet<AyEdeHistoriaClinica> AyEdeHistoriasClinicas { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -34,9 +35,8 @@ namespace ORT
                 .HasForeignKey<Visita>(b => b.RecetaId)
                 .IsRequired(false);
 
-            builder.Entity<HistoriaClinica>()
-                .HasMany(b => b.AlergiasyEnfermedades)
-                .WithOne();
+            builder.Entity<AyEdeHistoriaClinica>()
+                .HasKey(x => new { x.HistoriaClinicaId, x.AlergiayEnfermedadId });
         }
     }
 }

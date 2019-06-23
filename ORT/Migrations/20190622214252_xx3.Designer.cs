@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ORT;
 
 namespace ORT.Migrations
 {
     [DbContext(typeof(Model))]
-    partial class ModelModelSnapshot : ModelSnapshot
+    [Migration("20190622214252_xx3")]
+    partial class xx3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -25,26 +27,17 @@ namespace ORT.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int?>("HistoriaClinicaId");
+
                     b.Property<string>("Nombre");
 
                     b.Property<string>("Tipo");
 
                     b.HasKey("Id");
 
+                    b.HasIndex("HistoriaClinicaId");
+
                     b.ToTable("AlergiasyEnfermedades");
-                });
-
-            modelBuilder.Entity("ORT.AyEdeHistoriaClinica", b =>
-                {
-                    b.Property<int>("HistoriaClinicaId");
-
-                    b.Property<int>("AlergiayEnfermedadId");
-
-                    b.HasKey("HistoriaClinicaId", "AlergiayEnfermedadId");
-
-                    b.HasIndex("AlergiayEnfermedadId");
-
-                    b.ToTable("AyEdeHistoriasClinicas");
                 });
 
             modelBuilder.Entity("ORT.HistoriaClinica", b =>
@@ -132,17 +125,11 @@ namespace ORT.Migrations
                     b.ToTable("Visitas");
                 });
 
-            modelBuilder.Entity("ORT.AyEdeHistoriaClinica", b =>
+            modelBuilder.Entity("ORT.AlergiayEnfermedad", b =>
                 {
-                    b.HasOne("ORT.AlergiayEnfermedad", "AlergiayEnfermedad")
-                        .WithMany()
-                        .HasForeignKey("AlergiayEnfermedadId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("ORT.HistoriaClinica", "HistoriaClinica")
-                        .WithMany()
-                        .HasForeignKey("HistoriaClinicaId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                    b.HasOne("ORT.HistoriaClinica")
+                        .WithMany("AlergiasyEnfermedades")
+                        .HasForeignKey("HistoriaClinicaId");
                 });
 
             modelBuilder.Entity("ORT.LineaReceta", b =>
