@@ -27,6 +27,7 @@ namespace ORT
             try{
             var Receta = _context.Recetas
                 .Include(x=> x.LineaRecetas)
+                .Include(x=>x.Visita)
                 .SingleOrDefault(X => X.Id == Id);
             return Receta;
             } catch(Exception){return null;}
