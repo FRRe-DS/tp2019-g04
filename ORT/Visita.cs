@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 using System.Collections;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ORT
 {
@@ -17,9 +18,6 @@ namespace ORT
         public int HistoriaClinicaId { get; set; }
         public HistoriaClinica HistoriaClinica { get; set; }
         public int PartidaMedicamentoId { get; set; }
-
-
-        public int? RecetaId { get; set; }
         public Receta Receta { get; set; }
 
         private Model _context;

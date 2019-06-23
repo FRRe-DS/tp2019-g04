@@ -25,6 +25,51 @@ namespace ORT.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "AlergiasyEnfermedades",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Nombre = table.Column<string>(nullable: true),
+                    Tipo = table.Column<string>(nullable: true),
+                    HistoriaClinicaId = table.Column<int>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AlergiasyEnfermedades", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_AlergiasyEnfermedades_HistoriasClinicas_HistoriaClinicaId",
+                        column: x => x.HistoriaClinicaId,
+                        principalTable: "HistoriasClinicas",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Visitas",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Fecha = table.Column<DateTime>(nullable: false),
+                    Diagnostico = table.Column<string>(nullable: true),
+                    Sintomas = table.Column<string>(nullable: true),
+                    MedicoId = table.Column<int>(nullable: false),
+                    HistoriaClinicaId = table.Column<int>(nullable: false),
+                    PartidaMedicamentoId = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Visitas", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Visitas_HistoriasClinicas_HistoriaClinicaId",
+                        column: x => x.HistoriaClinicaId,
+                        principalTable: "HistoriasClinicas",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Recetas",
                 columns: table => new
                 {
@@ -35,25 +80,10 @@ namespace ORT.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Recetas", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "AlergiasyEnfermedades",
-                columns: table => new
-                {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Nombre = table.Column<string>(nullable: true),
-                    Tipo = table.Column<string>(nullable: true),
-                    HistoriaClinicaId = table.Column<int>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_AlergiasyEnfermedades", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_AlergiasyEnfermedades_HistoriasClinicas_HistoriaClinicaId",
-                        column: x => x.HistoriaClinicaId,
-                        principalTable: "HistoriasClinicas",
+                        name: "FK_Recetas_Visitas_VisitaId",
+                        column: x => x.VisitaId,
+                        principalTable: "Visitas",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -79,37 +109,6 @@ namespace ORT.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.CreateTable(
-                name: "Visitas",
-                columns: table => new
-                {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Fecha = table.Column<DateTime>(nullable: false),
-                    Diagnostico = table.Column<string>(nullable: true),
-                    Sintomas = table.Column<string>(nullable: true),
-                    MedicoId = table.Column<int>(nullable: false),
-                    HistoriaClinicaId = table.Column<int>(nullable: false),
-                    PartidaMedicamentoId = table.Column<int>(nullable: false),
-                    RecetaId = table.Column<int>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Visitas", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Visitas_HistoriasClinicas_HistoriaClinicaId",
-                        column: x => x.HistoriaClinicaId,
-                        principalTable: "HistoriasClinicas",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Visitas_Recetas_RecetaId",
-                        column: x => x.RecetaId,
-                        principalTable: "Recetas",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
             migrationBuilder.CreateIndex(
                 name: "IX_AlergiasyEnfermedades_HistoriaClinicaId",
                 table: "AlergiasyEnfermedades",
@@ -127,16 +126,15 @@ namespace ORT.Migrations
                 column: "RecetaId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Recetas_VisitaId",
+                table: "Recetas",
+                column: "VisitaId",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Visitas_HistoriaClinicaId",
                 table: "Visitas",
                 column: "HistoriaClinicaId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Visitas_RecetaId",
-                table: "Visitas",
-                column: "RecetaId",
-                unique: true,
-                filter: "[RecetaId] IS NOT NULL");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -148,13 +146,13 @@ namespace ORT.Migrations
                 name: "LineasRecetas");
 
             migrationBuilder.DropTable(
+                name: "Recetas");
+
+            migrationBuilder.DropTable(
                 name: "Visitas");
 
             migrationBuilder.DropTable(
                 name: "HistoriasClinicas");
-
-            migrationBuilder.DropTable(
-                name: "Recetas");
         }
     }
 }

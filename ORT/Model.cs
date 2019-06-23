@@ -23,20 +23,19 @@ namespace ORT
                 .HasIndex(u => u.PacienteId)
                 .IsUnique();
 
-            builder.Entity<Receta>()
-                .HasOne(p => p.Visita)
-                .WithOne(i => i.Receta)
-                .HasForeignKey<Receta>(b => b.VisitaId)
-                .IsRequired();
+            //builder.Entity<Receta>()
+            //    .HasOne(p => p.Visita)
+            //    .WithOne(i => i.Receta)
+            //    .HasForeignKey<Receta>(b => b.VisitaId)
+            //    .IsRequired();
 
-            builder.Entity<Visita>()
-                .HasOne(p => p.Receta)
-                .WithOne(i => i.Visita)
-                .HasForeignKey<Visita>(b => b.RecetaId)
-                .IsRequired(false);
 
             builder.Entity<AyEdeHistoriaClinica>()
                 .HasKey(x => new { x.HistoriaClinicaId, x.AlergiayEnfermedadId });
+
+            builder.Entity<Receta>()
+                 .HasIndex(u => u.VisitaId)
+                 .IsUnique();
         }
     }
 }

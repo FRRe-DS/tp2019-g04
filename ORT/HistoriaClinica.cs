@@ -29,6 +29,8 @@ namespace ORT
             var historiasClinicas = _context.HistoriasClinicas
                                    // .Include(x=>x.AlergiasyEnfermedades)
                                     .Include(x=> x.Visitas)
+                                    .ThenInclude(x=>x.Receta)
+                                    .ThenInclude(x=>x.LineaRecetas)
                                      .ToList();
             return historiasClinicas;
             }catch(Exception){return null;}
