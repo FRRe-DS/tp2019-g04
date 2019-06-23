@@ -10,8 +10,8 @@ using ORT;
 namespace ORT.Migrations
 {
     [DbContext(typeof(Model))]
-    [Migration("20190622232004_xx7")]
-    partial class xx7
+    [Migration("20190623021601_xx1")]
+    partial class xx1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -100,6 +100,9 @@ namespace ORT.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("VisitaId")
+                        .IsUnique();
+
                     b.ToTable("Recetas");
                 });
 
@@ -119,17 +122,11 @@ namespace ORT.Migrations
 
                     b.Property<int>("PartidaMedicamentoId");
 
-                    b.Property<int?>("RecetaId");
-
                     b.Property<string>("Sintomas");
 
                     b.HasKey("Id");
 
                     b.HasIndex("HistoriaClinicaId");
-
-                    b.HasIndex("RecetaId")
-                        .IsUnique()
-                        .HasFilter("[RecetaId] IS NOT NULL");
 
                     b.ToTable("Visitas");
                 });
@@ -155,16 +152,20 @@ namespace ORT.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
+            modelBuilder.Entity("ORT.Receta", b =>
+                {
+                    b.HasOne("ORT.Visita", "Visita")
+                        .WithOne("Receta")
+                        .HasForeignKey("ORT.Receta", "VisitaId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
             modelBuilder.Entity("ORT.Visita", b =>
                 {
                     b.HasOne("ORT.HistoriaClinica", "HistoriaClinica")
                         .WithMany("Visitas")
                         .HasForeignKey("HistoriaClinicaId")
                         .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("ORT.Receta", "Receta")
-                        .WithOne("Visita")
-                        .HasForeignKey("ORT.Visita", "RecetaId");
                 });
 #pragma warning restore 612, 618
         }
