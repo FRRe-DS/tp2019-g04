@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\CS\\AppWeb\\AppWeb.csproj": {}
+    "C:\\Users\\fedez\\Desktop\\tp2019-g04\\AppWeb\\AppWeb.csproj": {}
   },
   "projects": {
-    "D:\\CS\\AppWeb\\AppWeb.csproj": {
+    "C:\\Users\\fedez\\Desktop\\tp2019-g04\\AppWeb\\AppWeb.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\CS\\AppWeb\\AppWeb.csproj",
+        "projectUniqueName": "C:\\Users\\fedez\\Desktop\\tp2019-g04\\AppWeb\\AppWeb.csproj",
         "projectName": "AppWeb",
-        "projectPath": "D:\\CS\\AppWeb\\AppWeb.csproj",
+        "projectPath": "C:\\Users\\fedez\\Desktop\\tp2019-g04\\AppWeb\\AppWeb.csproj",
         "packagesPath": "C:\\Users\\fedez\\.nuget\\packages\\",
-        "outputPath": "D:\\CS\\AppWeb\\obj\\",
+        "outputPath": "C:\\Users\\fedez\\Desktop\\tp2019-g04\\AppWeb\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\ProgramData\\Xamarin\\NuGet\\",
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
@@ -42,6 +42,51 @@
       },
       "frameworks": {
         "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.AspNetCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            },
+            "Microsoft.AspNetCore.Razor.Design": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[2.2.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[2.2.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.4, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            },
+            "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
+              "target": "Package",
+              "version": "[1.7.10, )"
+            },
+            "NETStandard.Library": {
+              "target": "Package",
+              "version": "[2.0.3, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.2, )"
+            }
+          },
           "imports": [
             "net461"
           ],
