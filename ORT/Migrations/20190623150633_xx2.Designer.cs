@@ -10,8 +10,8 @@ using ORT;
 namespace ORT.Migrations
 {
     [DbContext(typeof(Model))]
-    [Migration("20190623021601_xx1")]
-    partial class xx1
+    [Migration("20190623150633_xx2")]
+    partial class xx2
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
