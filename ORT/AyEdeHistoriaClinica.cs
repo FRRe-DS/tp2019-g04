@@ -67,6 +67,20 @@ namespace ORT
             catch (Exception) { return null; }
         }
 
+        public List<AyEdeHistoriaClinica> GetAlergiasyEnfermedadesPorHC(int idHC)
+        {
+            try
+            {
+                var ayEporHC = _context.AyEdeHistoriasClinicas
+                .Include(x =>x.AlergiayEnfermedad)
+                .Where(x => x.HistoriaClinicaId == idHC).ToList();
+                return ayEporHC;
+            }
+            catch (Exception) { return null; }
+
+
+        }
+
 
     }
 

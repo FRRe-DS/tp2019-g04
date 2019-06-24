@@ -8,7 +8,7 @@ using ORT;
 
 namespace Microservicio.Controllers
 {
-    [Route("api/fede")]
+    [Route("api/alergiasyenfdeHC")]
     [ApiController]
     public class AyEdeHCController : ControllerBase
     {
@@ -29,9 +29,11 @@ namespace Microservicio.Controllers
 
         // GET: api/AyEdeHC/5
         [HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
+        public IEnumerable<AyEdeHistoriaClinica> Get(int id)
         {
-            return "value";
+            AyEdeHistoriaClinica AyEdeHC = new AyEdeHistoriaClinica(_context);
+            var LAyEdeHC = AyEdeHC.GetAlergiasyEnfermedadesPorHC(id);
+            return LAyEdeHC;
         }
 
         // POST: api/AyEdeHC
