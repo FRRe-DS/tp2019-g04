@@ -16,6 +16,7 @@ namespace ORT
         public List<Visita> Visitas { get; set; }
         public string Observaciones { get; set; }
         public string GrupoSanguineo { get; set; }
+        public List<AyEdeHistoriaClinica> AlergiasyEnfermedades { get; set; }
 
 
         private Model _context;
@@ -27,7 +28,8 @@ namespace ORT
         {
             try{
             var historiasClinicas = _context.HistoriasClinicas
-                                   // .Include(x=>x.AlergiasyEnfermedades)
+                                   .Include(x=>x.AlergiasyEnfermedades)
+                                        .ThenInclude(x=>x.AlergiayEnfermedad)
                                     .Include(x=> x.Visitas)
                                     .ThenInclude(x=>x.Receta)
                                     .ThenInclude(x=>x.LineaRecetas)
@@ -40,7 +42,8 @@ namespace ORT
         {
             try{
             var historiaClinica =   _context.HistoriasClinicas
-                                   // .Include(x => x.AlergiasyEnfermedades)
+                                   .Include(x => x.AlergiasyEnfermedades)
+                                        .ThenInclude(x=>x.AlergiayEnfermedad)
                                     .Include(x => x.Visitas)
                                     .SingleOrDefault(x => x.PacienteId == PacId);
             return historiaClinica;
@@ -51,7 +54,8 @@ namespace ORT
         {
             try{
             var historiaClinica = _context.HistoriasClinicas
-               // .Include(x => x.AlergiasyEnfermedades)
+                                    .Include(x => x.AlergiasyEnfermedades)
+                                        .ThenInclude(x=>x.AlergiayEnfermedad)
                                     .Include(x => x.Visitas)
                                   .SingleOrDefault(x => x.Id == Id);
             return historiaClinica;
