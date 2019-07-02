@@ -60,11 +60,24 @@ namespace ORT
             try
             {
                 var ayEdeHC = _context.AyEdeHistoriasClinicas
-              
-                                      .SingleOrDefault(x => x.HistoriaClinicaId == IdHistoriaClinica && x.AlergiayEnfermedadId==IdAyE);
+                    .SingleOrDefault(x => x.HistoriaClinicaId == IdHistoriaClinica && x.AlergiayEnfermedadId==IdAyE);
                 return ayEdeHC;
             }
             catch (Exception) { return null; }
+        }
+
+        public List<AyEdeHistoriaClinica> GetAlergiasyEnfermedadesPorHC(int idHC)
+        {
+            try
+            {
+                var ayEporHC = _context.AyEdeHistoriasClinicas
+                .Where(x => x.HistoriaClinicaId == idHC)
+                    .Include(x => x.AlergiayEnfermedad).ToList();
+                return ayEporHC;
+            }
+            catch (Exception) { return null; }
+
+
         }
 
 

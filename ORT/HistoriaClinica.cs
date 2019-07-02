@@ -16,6 +16,7 @@ namespace ORT
         public List<Visita> Visitas { get; set; }
         public string Observaciones { get; set; }
         public string GrupoSanguineo { get; set; }
+        public List<AyEdeHistoriaClinica> AlergiasyEnfermedades { get; set; }
 
 
         private Model _context;
@@ -27,7 +28,8 @@ namespace ORT
         {
             try{
             var historiasClinicas = _context.HistoriasClinicas
-                                   // .Include(x=>x.AlergiasyEnfermedades)
+                                   .Include(x=>x.AlergiasyEnfermedades)
+                                        .ThenInclude(x=>x.AlergiayEnfermedad)
                                     .Include(x=> x.Visitas)
                                     .ThenInclude(x=>x.Receta)
                                     .ThenInclude(x=>x.LineaRecetas)
@@ -40,18 +42,40 @@ namespace ORT
         {
             try{
             var historiaClinica =   _context.HistoriasClinicas
-                                   // .Include(x => x.AlergiasyEnfermedades)
+                                   .Include(x => x.AlergiasyEnfermedades)
+                                        .ThenInclude(x=>x.AlergiayEnfermedad)
                                     .Include(x => x.Visitas)
                                     .SingleOrDefault(x => x.PacienteId == PacId);
             return historiaClinica;
             }catch(Exception){return null;}
         }
 
+        public List<HistoriaClinica> GetHistoriaClinicaPorMedico(List<Visita> V)
+        {
+            try
+            {
+                List<HistoriaClinica> HC = new List<HistoriaClinica>();
+                foreach (var a in V)
+                {
+                    var historiaClinica = _context.HistoriasClinicas                                    
+                                        .SingleOrDefault(y => y.Id == a.HistoriaClinicaId );
+                    if (historiaClinica != null)
+                    {
+                        HC.Add(historiaClinica);
+                    }
+                }
+                
+                return HC.Distinct().ToList();
+            }
+            catch (Exception) { return null; }
+        }
+
         public HistoriaClinica GetHistoriasClinicasPorId(int Id)
         {
             try{
             var historiaClinica = _context.HistoriasClinicas
-               // .Include(x => x.AlergiasyEnfermedades)
+                                    .Include(x => x.AlergiasyEnfermedades)
+                                        .ThenInclude(x=>x.AlergiayEnfermedad)
                                     .Include(x => x.Visitas)
                                   .SingleOrDefault(x => x.Id == Id);
             return historiaClinica;

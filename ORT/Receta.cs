@@ -28,6 +28,7 @@ namespace ORT
             var Receta = _context.Recetas
                 .Include(x=> x.LineaRecetas)
                 .Include(x=>x.Visita)
+                .ThenInclude(x=> x.HistoriaClinica)
                 .SingleOrDefault(X => X.Id == Id);
             return Receta;
             } catch(Exception){return null;}
@@ -39,6 +40,7 @@ namespace ORT
             var Receta = _context.Recetas
                 .Include(x => x.LineaRecetas)
                 .Include(x => x.Visita)
+                .ThenInclude(x => x.HistoriaClinica)
                 .ToList();
             return Receta;
             } catch(Exception){return null;}

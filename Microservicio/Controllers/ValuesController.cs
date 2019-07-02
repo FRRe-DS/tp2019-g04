@@ -29,6 +29,16 @@ namespace Microservicio.Controllers
             return LHC;
         }
 
+        [HttpGet("{id}/M")]
+        public IEnumerable<HistoriaClinica> GetMedicoId(int id)
+        {
+            Visita V = new Visita(_context);
+            List<Visita> Vis = V.BuscarVisitaPorMedicoId(id);
+            HistoriaClinica HC = new HistoriaClinica(_context);
+            var LHC = HC.GetHistoriaClinicaPorMedico(Vis);
+            return LHC;
+        }
+
         // GET api/values/5
         [HttpGet("{id}")]
         public HistoriaClinica Get(int id)

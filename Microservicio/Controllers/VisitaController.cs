@@ -22,16 +22,16 @@ namespace Microservicio.Controllers
         }
 
         // GET: api/Visita
-        [HttpGet]
-        public List<Visita> Get(HistoriaClinica HC, DateTime FechaDesde, DateTime FechaHasta)
+        [HttpGet("{id}")]
+        public Visita GetVisitaId(int id)
         {
             Visita V = new Visita(_context);
-            var Visit = V.BuscarVisitaPorFecha(HC.Visitas, FechaDesde, FechaHasta);
+            var Visit = V.BuscarVisitaPorId(id);
             return Visit;
         }
 
         // GET: api/Visita/5
-        [HttpGet("{id}")]
+        [HttpGet("{id}/M")]
         public List<Visita> Get(int id)
         {
             Visita V = new Visita(_context);

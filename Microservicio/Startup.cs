@@ -27,11 +27,21 @@ namespace Microservicio
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //Habilitar Cors
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowOrigin",
+                builder =>
+                
+                    builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+            });
 
+            //String de Conexion
             services.AddDbContext<Model>(option =>
             option.UseSqlServer(Configuration["ConnectionString:DefaultConnection"])
             );
 
+            //Json para que no se rompa
             services.AddMvc().AddJsonOptions(
             options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
         );
@@ -51,6 +61,9 @@ namespace Microservicio
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+            //Cors
+            app.UseCors("AllowOrigin");
+
 
             app.UseHttpsRedirection();
             app.UseMvc();

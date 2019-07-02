@@ -79,6 +79,8 @@ namespace ORT.Migrations
 
                     b.Property<int>("MedicamentoId");
 
+                    b.Property<string>("Nombre");
+
                     b.Property<int>("RecetaId");
 
                     b.HasKey("Id");
@@ -132,12 +134,12 @@ namespace ORT.Migrations
             modelBuilder.Entity("ORT.AyEdeHistoriaClinica", b =>
                 {
                     b.HasOne("ORT.AlergiayEnfermedad", "AlergiayEnfermedad")
-                        .WithMany()
+                        .WithMany("HistoriasClinicas")
                         .HasForeignKey("AlergiayEnfermedadId")
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("ORT.HistoriaClinica", "HistoriaClinica")
-                        .WithMany()
+                        .WithMany("AlergiasyEnfermedades")
                         .HasForeignKey("HistoriaClinicaId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });

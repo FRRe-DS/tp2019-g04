@@ -10,6 +10,7 @@ namespace ORT
     {
         public int Id { get; set; }
         public int MedicamentoId { get; set; }
+        public string Nombre { get; set; }
         public int CantidadRecetado {get;set;}
         public int RecetaId { get; set;}
         public  Receta Receta { get; set;}
