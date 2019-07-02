@@ -88,4 +88,28 @@ namespace Microservicio.Controllers
             else { return false; }
         }
     }
-}
+
+    [Route("api/historiasmedico")]
+    [ApiController]
+    public class HistoriaMedico : ControllerBase
+    {
+
+        private Model _context;
+
+        public HistoriaMedico(Model context)
+        {
+            _context = context;
+        }
+
+        [HttpGet("{id}")]
+        public IEnumerable<HistoriaClinica> GetMedicoId(int id)
+        {
+            Visita V = new Visita(_context);
+            List<Visita> Vis = V.BuscarVisitaPorMedicoId(id);
+            HistoriaClinica HC = new HistoriaClinica(_context);
+            var LHC = HC.GetHistoriaClinicaPorMedico(Vis);
+            return LHC;
+        }
+    }
+
+    }
