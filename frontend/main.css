@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+body {
+    background-color: rgb(247, 247, 247);
+    font-family: 'Roboto', sans-serif;
+    margin: 0px;
+    padding:0px;
+}
+.clickable-row:hover{
+    cursor: pointer;
+    background-color: rgb(219, 219, 219) !important;
+}
+.input-editable{
+  background-color: rgba(0,0,0,0);
+}
+
+.medicamento-cantidad{
+  width: 30px;
+}
+
+.table-wrapper  {
+  max-height: 300px;
+  overflow-y: auto;
+  width:100%;
+  margin: auto;
+}
+
+.row-btn{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* ============ LOGIN ================ */
+    .login-section{
+        margin-top: 100px;
+    }
+    .login-form{
+        background: #FFFFFF;
+        border: 3px solid #C8C8C8;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+        border-radius: 5px;
+        padding: 30px;
+    }
+    .login-form * {
+        margin: 10px 0px;
+    }
+    .ficha td:first-child{
+        border-right: 4px solid rgb(143, 45, 45,0.7);
+        font-weight: bold;
+    }
+    .ficha{
+        background-color: rgb(250, 249, 231);
+    }
+
+
+#myInput {
+  width: 100%; /* Full-width */
+  padding: 12px 20px 12px 40px; /* Add some padding */
+  border: 1px solid #ddd; /* Add a grey border */
+  margin-bottom: 12px; /* Add some space below the input */
+}    
+
+/* =================== LOADER SPINNER ============= */
+.loader,
+.loader:before,
+.loader:after {
+  background: #0069ff;
+  -webkit-animation: load1 1s infinite ease-in-out;
+  animation: load1 1s infinite ease-in-out;
+  width: 1em;
+  height: 4em;
+}
+.loader {
+  color: #0069ff;
+  text-indent: -9999em;
+  margin: 88px auto;
+  position: relative;
+  font-size: 11px;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+.loader:before,
+.loader:after {
+  position: absolute;
+  top: 0;
+  content: '';
+}
+.loader:before {
+  left: -1.5em;
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+.loader:after {
+  left: 1.5em;
+}
+@-webkit-keyframes load1 {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 0;
+    height: 4em;
+  }
+  40% {
+    box-shadow: 0 -2em;
+    height: 5em;
+  }
+}
+@keyframes load1 {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 0;
+    height: 4em;
+  }
+  40% {
+    box-shadow: 0 -2em;
+    height: 5em;
+  }
+}

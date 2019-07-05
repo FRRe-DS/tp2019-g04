@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DACS | Historias clinicas </title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="main.css">
+    <script src="api.js"></script>
+    <!-- Importamos los componentes -->
+    <script src="componentes/login.js"></script>
+    <script src="componentes/paciente.js"></script>
+    <script src="componentes/pacientevisita.js"></script>
+    <script src="componentes/medico.js"></script>
+    <script src="componentes/turnos.js"></script>
+    <script src="componentes/pacientes.js"></script>
+    <script src="componentes/historia.js"></script>
+    <script src="componentes/registrarvisita.js"></script>
+
+
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+        
+    <div id="app">
+        <!-- route outlet -->
+        <!-- component matched by the route will render here -->
+        <router-view></router-view>
+    </div>
+    <script>
+    
+        // 0. If using a module system (e.g. via vue-cli), import Vue and VueRouter
+        // and then call `Vue.use(VueRouter)`.
+
+        // 1. Define route components.
+        // These can be imported from other files
+
+        // separe en la carpeta components/
+        
+
+        // 2. Define some routes
+        // Each route should map to a component. The "component" can
+        // either be an actual component constructor created via
+        // `Vue.extend()`, or just a component options object.
+        // We'll talk about nested routes later.
+        const routes = [
+            { path: '/', component: Login },
+            { path: '/paciente/:id', name:'paciente.id' ,component: Paciente },
+            { path: '/paciente/visita/:id', name:'visita.id', component: PacienteVisita },
+            { path: '/medico/:idmed', name:'medico.id',component: Medico,
+                children: [
+                    // Navbar will be rendered inside Medico's <router-view>
+                    // when /medico/:id is matched
+                    // { path: '', component: Navbar },
+                   
+                    // Turnos will be rendered inside Medico's <router-view>
+                    // when /medico/:id/turnos is matched
+                    { path: 'turnos', component: Turnos },
+                   
+                    // Pacientes will be rendered inside Medico's <router-view>
+                    // when /medico/:id/pacientes is matched
+                    { path: 'pacientes', component: Pacientes },
+                    { path: 'pacientes/:id',name:'medico.paciente.id', component: Historia },
+                    // RegistrarVisita will be rendered inside Medico's <router-view>
+                    // when /medico/:id/registrarvisita is matched
+                    { path: 'registrarvisita/:idhist',name:'registrarvisita.id', component: RegistrarVisita }
+                ]
+            }
+        ]
+
+        // 3. Create the router instance and pass the `routes` option
+        // You can pass in additional options here, but let's
+        // keep it simple for now.
+        const router = new VueRouter({
+            routes // short for `routes: routes`
+        })
+
+        // 4. Create and mount the root instance.
+        // Make sure to inject the router with the router option to make the
+        // whole app router-aware.
+        
+
+        
+        const app = new Vue({
+        el: '#app',
+        router,
+        components: {
+            Login,
+            Paciente,
+            PacienteVisita,
+            Medico,
+            Turnos,
+            Pacientes,
+            Historia,
+            RegistrarVisita
+        }
+    })
+
+        // Now the app has started!
+    </script>
+</body>
+</html>
